@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Image Guess</title>
-    <style> body {
-        margin: 20px;
-    } </style>
+    <style>
+        body { margin: 20px;}
+        image {margin: 20px;}
+    </style>
     <script>
         window.onload = init;
         function init() {
-            let image = document.getElementById("zero");
-            image.onclick = showAnswer;
+            let images = document.getElementsByTagName("img");
+            for (let i = 0; i < images.length; i++) {
+                images[i].onclick = showAnswer;
+            }
         }
 
-        function showAnswer () {
-            let image = document.getElementById("zero");
-            image.src = "zero.jpg";
+        function showAnswer (eventObj) {
+            let image = eventObj.target;
+            let name = image.id;
+            name = name + ".jpg";
+            image.src = name;
+
         }
 
     </script>
 </head>
 <body>
-<img id="zero" src="zeroblur.jpg" alt="madona)">
+<img id="zero" src="zeroblur.jpg" alt="madona">
+<img id="one" src="oneblur.jpg" alt="madona">
+<img id="two" src="twoblur.jpg" alt="madona">
+<img id="three" src="threeblur.jpg" alt="madona">
+<img id="four" src="fourblur.jpg" alt="madona">
+<img id="five" src="fiveblur.jpg" alt="madona">
 
 </body>
 </html>
