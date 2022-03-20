@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Guess</title>
+    <style> body {
+        margin: 20px;
+    } </style>
+    <script>
+        window.onload = init;
+        function init() {
+            let image = document.getElementById("zero");
+            image.onclick = showAnswer;
+        }
+
+        function showAnswer () {
+            let image = document.getElementById("zero");
+            image.src = "zero.jpg";
+        }
+
+    </script>
+</head>
+<body>
+<img id="zero" src="zeroblur.jpg" alt="madona)">
+
+</body>
+</html>

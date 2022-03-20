@@ -6,7 +6,7 @@ const test5 = [];
 let test6;
 const test7 = {"abcdef": 123};
 const test8 = ["abcdef", 123];
-function test9() {return "abcdef"};
+function test9() {return "abcdef"}
 let test10 = null;
 let test11 = 0/0;
 
@@ -27,3 +27,12 @@ if (99 == "99") {
 } else {
     console.log("No way a number equals a string");
 }
+function Duck(sound) {
+    this.sound = sound;
+    this.quack = function() {console.log(this.sound);}
+}
+
+const toy = new Duck("quack quack");
+toy.quack();
+console.log(typeof toy);
+console.log(toy instanceof Duck);
