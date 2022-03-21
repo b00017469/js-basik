@@ -1,3 +1,4 @@
+/*
 const test1 = "abcdef";
 const test2 = 123;
 const test3 = true;
@@ -36,3 +37,24 @@ const toy = new Duck("quack quack");
 toy.quack();
 console.log(typeof toy);
 console.log(toy instanceof Duck);
+*/
+
+function fun(echo) {
+    console.log(echo);
+}
+
+fun("hello");
+
+function boo(aFunction) {
+    aFunction("boo");
+}
+boo(fun);
+console.log(fun);
+fun(boo);
+let moreFun = fun;
+moreFun("hello again");
+function echoMaker() {
+    return fun;
+}
+let bigFun = echoMaker();
+bigFun("Is there an echo?");

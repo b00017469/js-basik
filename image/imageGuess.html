@@ -12,7 +12,8 @@
         function init() {
             let images = document.getElementsByTagName("img");
             for (let i = 0; i < images.length; i++) {
-                images[i].onclick = showAnswer;
+                images[i].onmouseover = showAnswer;
+                images[i].onmouseout = reblur;
             }
         }
 
@@ -21,9 +22,14 @@
             let name = image.id;
             name = name + ".jpg";
             image.src = name;
+          //  setTimeout(reblur, 5000, image);
 
+            }
+
+        function reblur (even) {
+            let image = even.target;
+            image.src = image.id + "blur.jpg";
         }
-
     </script>
 </head>
 <body>
